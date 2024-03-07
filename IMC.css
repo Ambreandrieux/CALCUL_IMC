@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Maitree:wght@200&family=Quattrocento+Sans&family=Volkhov&display=swap');
+
+/* font-family: 'Maitree', serif;
+font-family: 'Quattrocento Sans', sans-serif;
+font-family: 'Volkhov', serif; */
+
+/***************** VARIABLE *****************/
+/* fait souvent à la fin du codage, repérer les choses identiques */
+:root {
+    --minnie : #333;
+    --darty : red;
+    --auchan : 20px;
+}
+
+/* ne pas faire plus de 3 selecteurs */
+/* tt la page/parent&enfant à ZERO */
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* responsive et box */
+}
+
+body {
+    /* moz : mozilla & (à privilégier ->) webkit : chrome + safari */
+    font-family: 'Quattrocento Sans', sans-serif;
+    min-height: 30rem; /* hauteur minimal d'un élément, carré au milieu */
+    padding: 5rem;
+    background-color: red;
+}
+
+.container {
+    background-color: white;
+    max-width: 850px; /* définir la largeur maximale */
+    margin: 0 auto; /* en fct de la ligne 27, adaptation aux responsive*/
+    padding: var(--auchan);
+    border-radius: 5px;
+    border: 1px solid var(--minnie);
+    box-shadow: 0 4px 5px var(--minnie);
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Maitree', serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: 300; /* réduit la graisse de Calcul */
+}
+
+h1 strong {
+    font-weight: 800; /* aug la graisse de d'IMC */
+    /* all : prend tte les valeurs de hover en bas */
+    transition: all 300ms;
+}
+
+h1 strong:hover {
+    color: darkturquoise;
+    cursor: pointer;
+
+}
+
+.inputs {
+    display: flex; /* enlève le bloc & aligne */
+    justify-content: center; /* aligner verticalement & associer au display */
+    /* align-items: center; aligner horizontalement */
+}
+
+.input-group:nth-child(2) { /* cible les deuxièmes enfants */
+    margin-left: 20px;
+}
+
+/* flex box & grid : casser les balises de types in-line ou block */
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    margin-left: 20px;
+}
+
+input {
+    min-width: 200px; /* longeur minimum */
+    font-size: 12px; /* taille caractères */
+    padding: 7px; /* largeur minimum */
+    border: none;
+    border-bottom: 1px solid #333;
+    box-shadow: 0 4px 5px #333;
+    border-radius: 10px;
+}
+
+input:focus {
+    outline: 1px solid #333;
+}
+
+button {
+    cursor: pointer;
+    margin: 20px; /* descend les boutons */
+    padding: 4px;
+    border-radius: 20px;
+    border-color: orange;
+    background-color: orange;
+    font-family: 'Volkhov', serif;
+    /* all : prend tte les valeurs de hover en bas */
+    transition: all 300ms;
+}
+
+button:hover {
+    background-color: gray;
+    border-color: gray;
+    box-shadow: 0 4px 5px; /* par défaut l'ombre est en noir */
+    text-shadow: 0 4px 5px orange; /* ombre du texte */
+}
+
+.bmi-value {
+    margin-top: 20px;
+}
+
+#mickey {
+    color: #dc1464;
+}
+
+/****************** MEDIA QUERRIES - responsive *********************/
+/* 20px — 480px: Mobile devices.
+481px — 768px: iPads, Tablets.
+769px — 1024px: Small screens, laptops.
+1025px — 1200px: Desktops, large screens.
+1201px and more — Extra large screens, TV. */
+/* bullstrap est mieux pour le responsive plus homogènes, moins strictes */
+
+/* MOBILE */
+  @media /* (min-width:320px) and */ (max-width:480px) { 
+    /* min + rapidite chergement que max  */
+    
+    
+    body {
+        background-color: blue!important;
+    }
+    
+    .container {
+        max-width: 600px;
+    }
+
+    .inputs {
+        flex-direction: column;
+        /* les deux propriétés suivantes s'applique seulement s'il y a flex-direction */
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* TABLETTE */
+@media (max-width:768px) {
+    /* .container {
+        padding: 2rem;
+        margin: 4rem 5rem;
+        background-color: white;
+        text-align: center;
+    } */
+    body {
+        background-color: blueviolet;
+    }
+
+    .container {
+        max-width: 600px;
+    }
+
+    .inputs {
+        flex-direction: column;
+        /* les deux propriétés suivantes s'applique seulement s'il y a flex-direction */
+        align-items: center;
+        justify-content: center;
+    }
+}

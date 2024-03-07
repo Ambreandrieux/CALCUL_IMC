@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="IMC.css">
+    <title>Calcul IMC</title>
+</head>
+<!-- id : cible/nomme élément petit plus pour le JS
+class : cible/nomme -->
+<body>
+    <section class="container">
+    <!-- élément parent -->
+        <h1>Calcul <strong>d'IMC</strong></h1>
+
+        <form>
+            <div class="inputs">
+                <div class="input-group">
+                    <label for="height">Votre taille en centimètres</label>
+                    <input type="number" placeholder="Votre taille en centimètres" id="height" class="height-input" min="1" max="300" required>
+                    <!-- height pour lier les balises -->
+                    <!-- class pour le CSS pour traiter différemment -->
+                    <!-- min & max pour rajouter une contrainte de nb / required obligé à remplir le champs -->
+                </div>
+
+                <div class="input-group">
+                    <label for="weight">Votre poids en kg</label>
+                    <input type="number" placeholder="Votre poids en kg" id="weight" class="weight-input" min="1" max="300" required>
+                </div>
+            </div>
+            
+<!----------- Création du nouveau lien, d'une nvelle page ----------->
+            <button><a href="respp2.html" target="_blank">Calculer un IMC</a></button>
+        </form>
+
+        <div class="info">
+            <!-- 2 class pour gagner du temps et traiter les deux en mm temps -->
+            <!-- id pour le traiter séparement -->
+            <p class="bmi-value" id="mickey">0</p>
+            <p class="bmi-value">En attente du résultat...</p>
+        </div>
+    </section>
+</body>
+</html>
